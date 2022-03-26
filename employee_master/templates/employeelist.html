@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        body{
+            background-color:rgb(165, 192, 202);
+        }
+        /* <style> */
+        /* Style the body */
+        /* body {
+        font-family: Arial;
+        margin: 0;
+        } */
+
+        /* Header/Logo Title */
+        .header {
+        padding: 20px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+        }
+
+        /* Page Content */
+        .content {padding:20px;
+                  align-content: center;
+                  text-align: center;}
+        </style>
+    </style>
+    <title>Employee_details</title>
+</head>
+
+<div class="header">
+    <h1>EMPLOYEE MASTER</h1>
+  </div>
+<body class="content">
+    <form action='/saveemployee/' method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <table border="1" align="center">
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>email</th>
+                <th>Adress</th>       
+                <th>Phone</th>
+            </tr>
+            {% for item in employee %}
+            <tr> 
+                <td>{{ item.id }}</td>
+                <td>{{ item.full_name }}</td>
+                <td><img src="{{ item.image.url }}" width="150" height="133"></td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.phone }}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+        <!-- <button type="submit">Submit</button> -->
+    </form>
+        </div>
+<!-- <h1>The Employees Here at TechVidvan</h1>
+Employee name: {{ first_name }} -->
+</body>
+</html>

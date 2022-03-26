@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-color:rgb(165, 192, 202);
+        }
+        /* <style> */
+        /* Style the body */
+        /* body {
+        font-family: Arial;
+        margin: 0;
+        } */
+
+        /* Header/Logo Title */
+        .header {
+        padding: 20px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+        }
+
+        /* Page Content */
+        .content {padding:20px;
+                  align-content: center;
+                  text-align: center;}
+        </style>
+    </style>
+    <title>Employee_details</title>
+</head>
+
+<div class="header">
+    <h1>EMPLOYEE MASTER</h1>
+  </div>
+<body class="content">
+    <form action='/addorviewemployee/' method='POST'>
+        {% csrf_token %}
+        <div >
+            <br<br><input type='submit' name="add" value='Add Employee'><br><br>
+            <br<br><input type='submit' name="view" value='View Employee'>
+        </div>
+    </form>
+        </div>
+<!-- <h1>The Employees Here at TechVidvan</h1>
+Employee name: {{ first_name }} -->
+</body>
+</html>
