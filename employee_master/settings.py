@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'phonenumber_field',
     #local
     'employee',
-    'phonenumber_field',
+    
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'employee_master.urls'
@@ -162,7 +164,7 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
 # User uploaded files (Images, Videos, PDF)
 # https://docs.djangoproject.com/en/2.2/topics/files/
 MEDIA_URL = '/media/'
