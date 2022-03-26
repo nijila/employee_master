@@ -25,6 +25,11 @@ from django.contrib.auth import views as auth_views
 router = DefaultRouter()
 router.register(r'employee', EmployeeViewSet)
 
+admin.site.site_header = 'EMPLOYEE MASTER'
+admin.site.site_title = 'EMPLOYEE MASTER'
+admin.site.index_title = 'Home'
+admin.site.site_url = "https://www.employeemaster.in/"
+
 urlpatterns = [
     path('api/', include(router.urls), name="api"),
     path('api-auth/', include('rest_framework.urls')),
