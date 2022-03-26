@@ -164,7 +164,7 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
 # User uploaded files (Images, Videos, PDF)
 # https://docs.djangoproject.com/en/2.2/topics/files/
 MEDIA_URL = '/media/'
